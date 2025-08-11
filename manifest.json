@@ -1,31 +1,39 @@
 {
-  "name": "amazon-to-notion",
-  "description": "Amazon.co.jp の書誌情報を Notion の DB に登録する Chrome 拡張機能です。",
-  "version": "0.1.0",
-  "manifest_version": 3,
-  "host_permissions": ["https://api.notion.com/"],
-  "action": {
-    "default_popup": "src/html/popup.html",
-    "default_icon": {
-      "16": "src/images/icon-16.png",
-      "32": "src/images/icon-32.png",
-      "48": "src/images/icon-48.png",
-      "128": "src/images/icon-128.png"
-    }
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://www.amazon.co.jp/*", "https://www.amazon.com/*", "https://booklog.jp/item/*"],
-      "run_at": "document_idle",
-      "js": ["src/js/content.js"]
-    }
-  ],
-  "options_page": "src/html/options.html",
-  "permissions": ["storage"],
-  "icons": {
-    "16": "src/images/icon-16.png",
-    "32": "src/images/icon-32.png",
-    "48": "src/images/icon-48.png",
-    "128": "src/images/icon-128.png"
-  }
+    "manifest_version": 3,
+    "name": "arXiv to Notion Saver",
+    "version": "0.1.0",
+    "description": "Save arXiv paper metadata (Title, Authors, Abstract, PDF link) into a Notion database.",
+    "icons": {
+        "16": "src/images/icons2.png",
+        "32": "src/images/icons2.png",
+        "48": "src/images/icons2.png",
+        "128": "src/images/icons2.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://api.notion.com/*",
+        "https://arxiv.org/*"
+    ],
+    "action": {
+        "default_title": "Save to Notion",
+        "default_popup": "src/html/popup.html"
+    },
+    "options_page": "src/html/options.html",
+    "background": {
+        "service_worker": "src/js/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://arxiv.org/abs/*"
+            ],
+            "js": [
+                "src/js/content.js"
+            ]
+        }
+    ]
 }

@@ -1,8 +1,8 @@
 {
-  "name": "amazon-to-notion",
-  "version": "1.0.0",
-  "description": "Amazon.co.jp の書誌情報を Notion の DB に登録する Chrome 拡張機能です。",
-  "author": "hikarock <i@hika69.com> (https://hika69.com/)",
+  "name": "arxiv-to-notion",
+  "version": "0.1.0",
+  "description": "arXivの論文メタデータをNotionデータベースに保存するChrome拡張機能。",
+  "author": "8-u8",
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.143",

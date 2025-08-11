@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>arXiv to Notion</title>
     <link rel="stylesheet" href="../css/popup.css" />
-  </head>
-  <body>
-    <form id="form" class="form">
-      <div class="image-wrapper">
-        <img id="cover" class="image" src="" />
-      </div>
-      <textarea id="title" class="textarea" placeholder="Title" required></textarea>
-      <input type="text" id="authors" class="input" placeholder="Authors" required />
-      <input type="text" id="publisher" class="input" placeholder="Publisher" required />
-      <input type="date" id="publication-date" class="input" required />
-      <input type="text" id="url" class="input" placeholder="URL" required />
-      <input type="number" id="pages" class="input" placeholder="Pages" required />
-      <select id="media-type" class="select" required>
-        <option value="Book" selected>Book</option>
-        <option value="Kindle">Kindle</option>
-        <option value="Audible">Audible</option>
-      </select>
-      <select id="token" class="select" required></select>
-      <input type="submit" id="button" class="button" value="Add to Notion" />
-    </form>
-    <div id="not-available" class="alert not-available">Not available.</div>
-    <div id="processing" class="alert processing">Processing...</div>
-    <div id="success" class="alert success">Success!</div>
-    <div id="error" class="alert error">Error.</div>
+</head>
+
+<body>
+    <h1 style="font-size:14px;margin:0 0 6px;">arXiv to Notion</h1>
+    <div id="status" class="status">Init...</div>
+    <div class="field"><strong>Title:</strong> <span id="title"></span></div>
+    <div class="field"><strong>Authors:</strong> <span id="authors"></span></div>
+    <div class="field"><strong>Abstract:</strong> <span id="abstract"></span></div>
+    <div class="field"><strong>PDF:</strong> <span id="pdf"></span></div><button id="saveBtn">Save to Notion</button>
+    <p style="margin-top:8px;font-size:11px;">Configure in <a href="../html/options.html" target="_blank">Options</a>.</p>
     <script src="../js/popup.js"></script>
-  </body>
+</body>
+
 </html>
